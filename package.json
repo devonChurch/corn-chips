@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build:development": "npm run clean:dist && NODE_ENV=development webpack --watch",
+    "build:production": "npm run clean:dist && NODE_ENV=production webpack -p",
+	"clean:dist": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
