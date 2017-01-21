@@ -69,99 +69,95 @@ exports["corn-chips"] =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-const dummy = (() => {
+"use strict";
 
-	const
 
-		padOutNumber = (roundedNumber, max) => {
+var dummy = function () {
 
-			const totalZeros = `${max}`.length - `${roundedNumber}`.length;
-			const paddedZeros = new Array(`${max}`.length - `${roundedNumber}`.length).fill('0').join('');
+	var padOutNumber = function padOutNumber(roundedNumber, max) {
 
-			return `${paddedZeros}${roundedNumber}`;
+		var totalZeros = ('' + max).length - ('' + roundedNumber).length;
+		var paddedZeros = new Array(('' + max).length - ('' + roundedNumber).length).fill('0').join('');
 
-		},
+		return '' + paddedZeros + roundedNumber;
+	},
+	    generateNumber = function generateNumber() {
+		var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+		    _ref$min = _ref.min,
+		    min = _ref$min === undefined ? 0 : _ref$min,
+		    max = _ref.max,
+		    _ref$pad = _ref.pad,
+		    pad = _ref$pad === undefined ? false : _ref$pad;
 
-		generateNumber = ({ min = 0, max, pad = false } = {}) => {
-
-			const currentParameters = () => `(min = ${min} | max = ${max || 'not supplied'})`;
-
-			if (!max) return warnUser(`Please supply a "max" parameter ${currentParameters()}`);
-			if (min > max) return warnUser(`Your "min" is greater than your "max" parameter ${currentParameters()}`);
-
-			const randomNumber = Math.random() * (max - min + 1) + min;
-			const roundedNumber = Math.floor(randomNumber);
-
-			return pad ? padOutNumber(roundedNumber, max) : roundedNumber;
-
-		},
-
-		wordLength = { min: 2, max: 6 },
-
-		letters = 'abcdefghijklmnopqrstuvwxyz'.split(''),
-
-		warnUser = (issue) => {
-
-			console.warn(issue);
-
-			return '';
-
-		},
-
-		capitaliseFirstLetter = (text) => {
-
-			const firstLetter = text.substr(0, 1).toUpperCase();
-			const restOfText = text.substr(1);
-
-			return `${firstLetter}${restOfText}`;
-
-		},
-
-		generateCharacters = (characters) => {
-
-			return new Array(characters).fill('').map((value, i) => {
-
-				const index = generateNumber({ max: letters.length - 1 });
-
-				return letters[index];
-
-			}).join('');
-
-		},
-
-  	    generateWords = (words) => {
-
-			return new Array(words).fill('').map(() => {
-
-				const characters = generateNumber(wordLength);
-
-				return generateCharacters(characters);
-
-			}).join(' ');
-
-		},
-
-		generateText = ({ characters, words } = {}) => {
-
-			const warning = (issue) => `Please supply either a "character" or "words" parameter (Currently ${issue} params supplied)`;
-
-			if (!characters && !words) return warnUser(warning('no'));
-			if (characters && words) return warnUser(warning('multiple'));
-
-			const text = characters ? generateCharacters(characters) : `${generateWords(words)}.`;
-
-			return capitaliseFirstLetter(text);
-
+		var currentParameters = function currentParameters() {
+			return '(min = ' + min + ' | max = ' + (max || 'not supplied') + ')';
 		};
+
+		if (!max) return warnUser('Please supply a "max" parameter ' + currentParameters());
+		if (min > max) return warnUser('Your "min" is greater than your "max" parameter ' + currentParameters());
+
+		var randomNumber = Math.random() * (max - min + 1) + min;
+		var roundedNumber = Math.floor(randomNumber);
+
+		return pad ? padOutNumber(roundedNumber, max) : roundedNumber;
+	},
+	    wordLength = { min: 2, max: 6 },
+	    letters = 'abcdefghijklmnopqrstuvwxyz'.split(''),
+	    warnUser = function warnUser(issue) {
+
+		console.warn(issue);
+
+		return '';
+	},
+	    capitaliseFirstLetter = function capitaliseFirstLetter(text) {
+
+		var firstLetter = text.substr(0, 1).toUpperCase();
+		var restOfText = text.substr(1);
+
+		return '' + firstLetter + restOfText;
+	},
+	    generateCharacters = function generateCharacters(characters) {
+
+		return new Array(characters).fill('').map(function (value, i) {
+
+			var index = generateNumber({ max: letters.length - 1 });
+
+			return letters[index];
+		}).join('');
+	},
+	    generateWords = function generateWords(words) {
+
+		return new Array(words).fill('').map(function () {
+
+			var characters = generateNumber(wordLength);
+
+			return generateCharacters(characters);
+		}).join(' ');
+	},
+	    generateText = function generateText() {
+		var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+		    characters = _ref2.characters,
+		    words = _ref2.words;
+
+		var warning = function warning(issue) {
+			return 'Please supply either a "character" or "words" parameter (Currently ' + issue + ' params supplied)';
+		};
+
+		if (!characters && !words) return warnUser(warning('no'));
+		if (characters && words) return warnUser(warning('multiple'));
+
+		var text = characters ? generateCharacters(characters) : generateWords(words) + '.';
+
+		return capitaliseFirstLetter(text);
+	};
 
 	return {
 		number: generateNumber,
 		text: generateText
 	};
-
-})();
+}();
 
 console.log(dummy);
 console.log(dummy.text());
@@ -169,7 +165,7 @@ console.log(dummy.text({ characters: 15, words: 5 }));
 console.log(dummy.text({ characters: 15 }));
 console.log(dummy.text({ words: 5 }));
 console.log(dummy.number());
-console.log(dummy.number({ min: 5}));
+console.log(dummy.number({ min: 5 }));
 console.log(dummy.number({ min: 5, max: 10 }));
 console.log(dummy.number({ min: 10, max: 5 }));
 console.log(dummy.number({ max: 10 }));
@@ -177,7 +173,6 @@ console.log(dummy.number({ max: 10, pad: true }));
 console.log(dummy.number({ min: 5, max: 100000, pad: true }));
 
 module.exports = dummy;
-
 
 /***/ })
 /******/ ]);
