@@ -28,10 +28,15 @@ module.exports = () => {
 			rules: [
 
 				{
+					enforce: 'pre',
+					test: /\.js$/,
+					include: [resolve(__dirname, 'src')],
+					loader: 'eslint-loader',
+				},
+
+				{
 					test: /\js$/,
-					include: [
-						resolve(__dirname, 'src')
-					],
+					include: [resolve(__dirname, 'src')],
 					loader: ['babel-loader']
 
 				}
@@ -42,7 +47,9 @@ module.exports = () => {
 
 		devtool: isProduction ? 'source-map' : 'eval',
 
-		context: __dirname
+		context: __dirname,
+
+		target: 'web',
 
 	};
 

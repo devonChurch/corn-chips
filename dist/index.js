@@ -1,2 +1,78 @@
-exports["corn-chips"]=function(r){function n(t){if(e[t])return e[t].exports;var o=e[t]={i:t,l:!1,exports:{}};return r[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}var e={};return n.m=r,n.c=e,n.i=function(r){return r},n.d=function(r,e,t){n.o(r,e)||Object.defineProperty(r,e,{configurable:!1,enumerable:!0,get:t})},n.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return n.d(e,"a",e),e},n.o=function(r,n){return Object.prototype.hasOwnProperty.call(r,n)},n.p="",n(n.s=0)}([function(r,n,e){"use strict";var t=function(){var r=function(r,n){var e=((""+n).length-(""+r).length,new Array((""+n).length-(""+r).length).fill("0").join(""));return""+e+r},n=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=n.min,t=void 0===e?0:e,u=n.max,a=n.pad,l=void 0!==a&&a,i=function(){return"(min = "+t+" | max = "+(u||"not supplied")+")"};if(!u)return o('Please supply a "max" parameter '+i());if(t>u)return o('Your "min" is greater than your "max" parameter '+i());var c=Math.random()*(u-t+1)+t,s=Math.floor(c);return l?r(s,u):s},e={min:2,max:6},t="abcdefghijklmnopqrstuvwxyz".split(""),o=function(r){return console.warn(r),""},u=function(r){var n=r.substr(0,1).toUpperCase(),e=r.substr(1);return""+n+e},a=function(r){return new Array(r).fill("").map(function(r,e){var o=n({max:t.length-1});return t[o]}).join("")},l=function(r){return new Array(r).fill("").map(function(){var r=n(e);return a(r)}).join(" ")},i=function(){var r=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=r.characters,e=r.words,t=function(r){return'Please supply either a "character" or "words" parameter (Currently '+r+" params supplied)"};if(!n&&!e)return o(t("no"));if(n&&e)return o(t("multiple"));var i=n?a(n):l(e)+".";return u(i)};return{number:n,text:i}}();console.log(t),console.log(t.text()),console.log(t.text({characters:15,words:5})),console.log(t.text({characters:15})),console.log(t.text({words:5})),console.log(t.number()),console.log(t.number({min:5})),console.log(t.number({min:5,max:10})),console.log(t.number({min:10,max:5})),console.log(t.number({max:10})),console.log(t.number({max:10,pad:!0})),console.log(t.number({min:5,max:1e5,pad:!0})),r.exports=t}]);
-//# sourceMappingURL=index.js.map
+exports["corn-chips"] =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar dummy = function () {\n\n\tvar padOutNumber = function padOutNumber(roundedNumber, max) {\n\n\t\tvar totalZeros = ('' + max).length - ('' + roundedNumber).length;\n\t\tvar paddedZeros = new Array(('' + max).length - ('' + roundedNumber).length).fill('0').join('');\n\n\t\treturn '' + paddedZeros + roundedNumber;\n\t},\n\t    generateNumber = function generateNumber() {\n\t\tvar _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t\t    _ref$min = _ref.min,\n\t\t    min = _ref$min === undefined ? 0 : _ref$min,\n\t\t    max = _ref.max,\n\t\t    _ref$pad = _ref.pad,\n\t\t    pad = _ref$pad === undefined ? false : _ref$pad;\n\n\t\tvar currentParameters = function currentParameters() {\n\t\t\treturn '(min = ' + min + ' | max = ' + (max || 'not supplied') + ')';\n\t\t};\n\n\t\tif (!max) return warnUser('Please supply a \"max\" parameter ' + currentParameters());\n\t\tif (min > max) return warnUser('Your \"min\" is greater than your \"max\" parameter ' + currentParameters());\n\n\t\tvar randomNumber = Math.random() * (max - min + 1) + min;\n\t\tvar roundedNumber = Math.floor(randomNumber);\n\n\t\treturn pad ? padOutNumber(roundedNumber, max) : roundedNumber;\n\t},\n\t    wordLength = { min: 2, max: 6 },\n\t    letters = 'abcdefghijklmnopqrstuvwxyz'.split(''),\n\t    warnUser = function warnUser(issue) {\n\n\t\tconsole.warn(issue);\n\n\t\treturn '';\n\t},\n\t    capitaliseFirstLetter = function capitaliseFirstLetter(text) {\n\n\t\tvar firstLetter = text.substr(0, 1).toUpperCase();\n\t\tvar restOfText = text.substr(1);\n\n\t\treturn '' + firstLetter + restOfText;\n\t},\n\t    generateCharacters = function generateCharacters(characters) {\n\n\t\treturn new Array(characters).fill('').map(function (value, i) {\n\n\t\t\tvar index = generateNumber({ max: letters.length - 1 });\n\n\t\t\treturn letters[index];\n\t\t}).join('');\n\t},\n\t    generateWords = function generateWords(words) {\n\n\t\treturn new Array(words).fill('').map(function () {\n\n\t\t\tvar characters = generateNumber(wordLength);\n\n\t\t\treturn generateCharacters(characters);\n\t\t}).join(' ');\n\t},\n\t    generateText = function generateText() {\n\t\tvar _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t\t    characters = _ref2.characters,\n\t\t    words = _ref2.words;\n\n\t\tvar warning = function warning(issue) {\n\t\t\treturn 'Please supply either a \"character\" or \"words\" parameter (Currently ' + issue + ' params supplied)';\n\t\t};\n\n\t\tif (!characters && !words) return warnUser(warning('no'));\n\t\tif (characters && words) return warnUser(warning('multiple'));\n\n\t\tvar text = characters ? generateCharacters(characters) : generateWords(words) + '.';\n\n\t\treturn capitaliseFirstLetter(text);\n\t};\n\n\treturn {\n\t\tnumber: generateNumber,\n\t\ttext: generateText\n\t};\n}();\n\nconsole.log(dummy);\nconsole.log(dummy.text());\nconsole.log(dummy.text({ characters: 15, words: 5 }));\nconsole.log(dummy.text({ characters: 15 }));\nconsole.log(dummy.text({ words: 5 }));\nconsole.log(dummy.number());\nconsole.log(dummy.number({ min: 5 }));\nconsole.log(dummy.number({ min: 5, max: 10 }));\nconsole.log(dummy.number({ min: 10, max: 5 }));\nconsole.log(dummy.number({ max: 10 }));\nconsole.log(dummy.number({ max: 10, pad: true }));\nconsole.log(dummy.number({ min: 5, max: 100000, pad: true }));\n\nmodule.exports = dummy;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ })
+/******/ ]);

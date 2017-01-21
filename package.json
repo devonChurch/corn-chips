@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:development": "npm run clean:dist && NODE_ENV=development webpack --watch",
     "build:production": "npm run clean:dist && NODE_ENV=production webpack -p",
-	"clean:dist": "rm -rf ./dist"
-  },
+    "clean:dist": "rm -rf ./dist"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devonChurch/corn-chips.git"
@@ -24,6 +24,10 @@
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-latest": "^6.22.0",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
     "webpack": "^2.2.0"
   }
 }
