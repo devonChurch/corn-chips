@@ -64,7 +64,7 @@ exports["corn-chips"] =
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,7 +72,34 @@ exports["corn-chips"] =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar dummy = function () {\n\n\tvar padOutNumber = function padOutNumber(roundedNumber, max) {\n\n\t\tvar totalZeros = ('' + max).length - ('' + roundedNumber).length;\n\t\tvar paddedZeros = new Array(('' + max).length - ('' + roundedNumber).length).fill('0').join('');\n\n\t\treturn '' + paddedZeros + roundedNumber;\n\t},\n\t    generateNumber = function generateNumber() {\n\t\tvar _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t\t    _ref$min = _ref.min,\n\t\t    min = _ref$min === undefined ? 0 : _ref$min,\n\t\t    max = _ref.max,\n\t\t    _ref$pad = _ref.pad,\n\t\t    pad = _ref$pad === undefined ? false : _ref$pad;\n\n\t\tvar currentParameters = function currentParameters() {\n\t\t\treturn '(min = ' + min + ' | max = ' + (max || 'not supplied') + ')';\n\t\t};\n\n\t\tif (!max) return warnUser('Please supply a \"max\" parameter ' + currentParameters());\n\t\tif (min > max) return warnUser('Your \"min\" is greater than your \"max\" parameter ' + currentParameters());\n\n\t\tvar randomNumber = Math.random() * (max - min + 1) + min;\n\t\tvar roundedNumber = Math.floor(randomNumber);\n\n\t\treturn pad ? padOutNumber(roundedNumber, max) : roundedNumber;\n\t},\n\t    wordLength = { min: 2, max: 6 },\n\t    letters = 'abcdefghijklmnopqrstuvwxyz'.split(''),\n\t    warnUser = function warnUser(issue) {\n\n\t\tconsole.warn(issue);\n\n\t\treturn '';\n\t},\n\t    capitaliseFirstLetter = function capitaliseFirstLetter(text) {\n\n\t\tvar firstLetter = text.substr(0, 1).toUpperCase();\n\t\tvar restOfText = text.substr(1);\n\n\t\treturn '' + firstLetter + restOfText;\n\t},\n\t    generateCharacters = function generateCharacters(characters) {\n\n\t\treturn new Array(characters).fill('').map(function (value, i) {\n\n\t\t\tvar index = generateNumber({ max: letters.length - 1 });\n\n\t\t\treturn letters[index];\n\t\t}).join('');\n\t},\n\t    generateWords = function generateWords(words) {\n\n\t\treturn new Array(words).fill('').map(function () {\n\n\t\t\tvar characters = generateNumber(wordLength);\n\n\t\t\treturn generateCharacters(characters);\n\t\t}).join(' ');\n\t},\n\t    generateText = function generateText() {\n\t\tvar _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t\t    characters = _ref2.characters,\n\t\t    words = _ref2.words;\n\n\t\tvar warning = function warning(issue) {\n\t\t\treturn 'Please supply either a \"character\" or \"words\" parameter (Currently ' + issue + ' params supplied)';\n\t\t};\n\n\t\tif (!characters && !words) return warnUser(warning('no'));\n\t\tif (characters && words) return warnUser(warning('multiple'));\n\n\t\tvar text = characters ? generateCharacters(characters) : generateWords(words) + '.';\n\n\t\treturn capitaliseFirstLetter(text);\n\t};\n\n\treturn {\n\t\tnumber: generateNumber,\n\t\ttext: generateText\n\t};\n}();\n\nconsole.log(dummy);\nconsole.log(dummy.text());\nconsole.log(dummy.text({ characters: 15, words: 5 }));\nconsole.log(dummy.text({ characters: 15 }));\nconsole.log(dummy.text({ words: 5 }));\nconsole.log(dummy.number());\nconsole.log(dummy.number({ min: 5 }));\nconsole.log(dummy.number({ min: 5, max: 10 }));\nconsole.log(dummy.number({ min: 10, max: 5 }));\nconsole.log(dummy.number({ max: 10 }));\nconsole.log(dummy.number({ max: 10, pad: true }));\nconsole.log(dummy.number({ min: 5, max: 100000, pad: true }));\n\nmodule.exports = dummy;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("/* WEBPACK VAR INJECTION */(function(module) {\n\nvar issueWarning = __webpack_require__(1);\n\nfunction padOutNumber(roundedNumber, max) {\n\n\tvar totalZeros = ('' + max).length - ('' + roundedNumber).length;\n\tvar paddedZeros = new Array(totalZeros).fill('0').join('');\n\n\treturn '' + paddedZeros + roundedNumber;\n}\n\nfunction generate() {\n\tvar _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t    _ref$min = _ref.min,\n\t    min = _ref$min === undefined ? 0 : _ref$min,\n\t    max = _ref.max,\n\t    _ref$pad = _ref.pad,\n\t    pad = _ref$pad === undefined ? false : _ref$pad;\n\n\tvar currentParameters = function currentParameters() {\n\t\treturn '(min = ' + min + ' | max = ' + (max || 'not supplied') + ')';\n\t};\n\n\tif (!max) return issueWarning('Please supply a \"max\" parameter ' + currentParameters());\n\tif (min > max) return issueWarning('Your \"min\" is greater than your \"max\" parameter ' + currentParameters());\n\n\tvar randomNumber = Math.random() * (max - min + 1) + min;\n\tvar roundedNumber = Math.floor(randomNumber);\n\n\treturn pad ? padOutNumber(roundedNumber, max) : roundedNumber;\n}\n\nmodule.export = generate;\n/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/number.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/number.js?");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nfunction warn(issue) {\n\n\tconsole.warn(issue);\n}\n\nmodule.exports = warn;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/warn.js\n// module id = 1\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/warn.js?");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar generateNumber = __webpack_require__(0);\nvar issueWarning = __webpack_require__(1);\n\nvar wordLength = { min: 2, max: 6 };\nvar letters = 'abcdefghijklmnopqrstuvwxyz'.split('');\n\nfunction capitaliseFirstLetter(text) {\n\n\tvar firstLetter = text.substr(0, 1).toUpperCase();\n\tvar restOfText = text.substr(1);\n\n\treturn '' + firstLetter + restOfText;\n}\n\nfunction generateCharacters(characters) {\n\n\treturn new Array(characters).fill('').map(function () {\n\n\t\tvar index = generateNumber({ max: letters.length - 1 });\n\n\t\treturn letters[index];\n\t}).join('');\n}\n\nfunction generateWords(words) {\n\n\treturn new Array(words).fill('').map(function () {\n\n\t\tvar characters = generateNumber(wordLength);\n\n\t\treturn generateCharacters(characters);\n\t}).join(' ');\n}\n\nfunction generate() {\n\tvar _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n\t    characters = _ref.characters,\n\t    words = _ref.words;\n\n\tvar warning = function warning(issue) {\n\t\treturn 'Please supply either a \"character\" or \"words\" parameter (Currently ' + issue + ' params supplied)';\n\t};\n\n\tif (!characters && !words) return issueWarning(warning('no'));\n\tif (characters && words) return issueWarning(warning('multiple'));\n\n\tvar text = characters ? generateCharacters(characters) : generateWords(words) + '.';\n\n\treturn capitaliseFirstLetter(text);\n}\n\nmodule.exports = generate;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/text.js\n// module id = 2\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/text.js?");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(module) {\r\n\tif(!module.webpackPolyfill) {\r\n\t\tmodule.deprecate = function() {};\r\n\t\tmodule.paths = [];\r\n\t\t// module.parent = undefined by default\r\n\t\tif(!module.children) module.children = [];\r\n\t\tObject.defineProperty(module, \"loaded\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.l;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, \"id\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.i;\r\n\t\t\t}\r\n\t\t});\r\n\t\tmodule.webpackPolyfill = 1;\r\n\t}\r\n\treturn module;\r\n};\r\n\n\n//////////////////\n// WEBPACK FOOTER\n// (webpack)/buildin/module.js\n// module id = 3\n// module chunks = 0\n\n//# sourceURL=webpack:///(webpack)/buildin/module.js?");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar generateNumber = __webpack_require__(0);\nvar generateText = __webpack_require__(2);\n\nmodule.exports = {\n\tnumber: generateNumber,\n\ttext: generateText\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 4\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 /******/ ]);
