@@ -1,4 +1,4 @@
-const {resolve} = require('path');
+const { resolve } = require('path');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -36,13 +36,13 @@ module.exports = () => {
 				},
 
 				{
-					test: /\js$/,
+					test: /\.js$/,
 					include: [resolve(__dirname, 'src')],
-					loader: ['babel-loader']
+					loader: ['babel-loader'],
 
-				}
+				},
 
-			]
+			],
 
 		},
 

@@ -39,7 +39,7 @@ function generateWords(words) {
 
 function generate({ characters, words } = {}) {
 
-	const warning = issue => `Please supply either a "character" or "words" parameter (Currently ${issue} params supplied)`;
+	const warning = issue => `please supply either a "character" or "words" parameter (Currently ${issue} params supplied)`;
 
 	if (!characters && !words) return issueWarning(warning('no'));
 	if (characters && words) return issueWarning(warning('multiple'));

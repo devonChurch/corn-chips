@@ -1,6 +1,6 @@
 function warn(issue) {
 
-	console.warn(issue);
+	throw new Error(issue);
 
 }
 

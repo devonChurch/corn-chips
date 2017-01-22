@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "build:development": "npm run clean:dist && NODE_ENV=development webpack --watch",
     "build:production": "npm run clean:dist && NODE_ENV=production webpack -p",
     "clean:dist": "rm -rf ./dist"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devonChurch/corn-chips.git"
@@ -28,6 +28,7 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.1.0",
     "webpack": "^2.2.0"
   }
 }

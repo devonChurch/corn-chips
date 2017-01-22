@@ -13,8 +13,8 @@ function generate({ min = 0, max, pad = false } = {}) {
 
 	const currentParameters = () => `(min = ${min} | max = ${max || 'not supplied'})`;
 
-	if (!max) return issueWarning(`Please supply a "max" parameter ${currentParameters()}`);
-	if (min > max) return issueWarning(`Your "min" is greater than your "max" parameter ${currentParameters()}`);
+	if (!max && isNaN(max)) return issueWarning(`please supply a "max" parameter ${currentParameters()}`);
+	if (min > max) return issueWarning(`your "min" is greater than your "max" parameter ${currentParameters()}`);
 
 	const randomNumber = (Math.random() * (max - min + 1)) + min;
 	const roundedNumber = Math.floor(randomNumber);
@@ -23,4 +23,4 @@ function generate({ min = 0, max, pad = false } = {}) {
 
 }
 
-module.export = generate;
+module.exports = generate;
