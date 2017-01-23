@@ -1,7 +1,7 @@
-const generateNumber = require('./number');
-const generateText = require('./text');
+const randomNumber = require('./number');
+const randomText = require('./text');
 
 module.exports = {
-	number: generateNumber,
-	text: generateText,
+	randomNumber,
+	randomText,
 };

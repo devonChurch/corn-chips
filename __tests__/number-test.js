@@ -2,7 +2,8 @@
 
 // babel-jest
 
-const cornChips = require('../src/');
+const {randomNumber} = require('../src/');
+// const {randomNumber} = require('../dist/corn-chips.js');
 
 describe('random number', () => {
 
@@ -10,7 +11,7 @@ describe('random number', () => {
 
 		const min = 0;
 		const max = 10;
-		const result = cornChips.number({ max });
+		const result = randomNumber({ max });
 
 		expect(result).toEqual(expect.any(Number));
 		expect(result).toBeGreaterThanOrEqual(min);
@@ -26,7 +27,7 @@ describe('padded random number', () => {
 
 		const min = 0;
 		const max = 10000;
-		const result = cornChips.number({ max, pad: true });
+		const result = randomNumber({ max, pad: true });
 		const resultAsNumber = parseInt(result, 10);
 
 		expect(result).toEqual(expect.any(String));
@@ -42,7 +43,7 @@ describe('number parameters', () => {
 
 	it('should throw an error if a max parameter is not supplied', () => {
 
-		const request = () => cornChips.number();
+		const request = () => randomNumber();
 
 		expect(request).toThrowError(/please supply a "max" parameter/);
 
@@ -52,7 +53,7 @@ describe('number parameters', () => {
 
 		const min = 10;
 		const max = 0;
-		const request = () => cornChips.number({ min, max });
+		const request = () => randomNumber({ min, max });
 
 		expect(request).toThrowError(/your "min" is greater than your "max" parameter/);
 

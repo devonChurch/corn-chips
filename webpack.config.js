@@ -12,13 +12,13 @@ module.exports = () => {
 
 			path: resolve(__dirname, 'dist'),
 
-			filename: 'index.js',
+			filename: 'corn-chips.js',
 
 			// publicPath:
 
 			library: 'corn-chips',
 
-			libraryTarget: 'commonjs',
+			libraryTarget: 'umd', // 'commonjs',
 
 			// pathinfo
 

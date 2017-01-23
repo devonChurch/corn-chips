@@ -2,14 +2,15 @@
 
 // babel-jest
 
-const cornChips = require('../src/');
+const {randomText} = require('../src/');
+// const {randomText} = require('../dist/corn-chips.js');
 
 describe('random characters', () => {
 
 	it('should generate a random set of 15 characters', () => {
 
 		const characters = 15;
-		const result = cornChips.text({ characters });
+		const result = randomText({ characters });
 		const characterLength = result.length;
 
 		expect(result).toEqual(expect.any(String));
@@ -25,7 +26,7 @@ describe('random words', () => {
 	it('should generate a random set of 5 words', () => {
 
 		const words = 5;
-		const result = cornChips.text({ words });
+		const result = randomText({ words });
 		const wordLength = result.split(' ').length;
 		const lastCharacter = result.slice(-1);
 
@@ -41,7 +42,7 @@ describe('text parameters', () => {
 
 	it('should throw an error if a no parameters are supplied', () => {
 
-		const request = () => cornChips.text();
+		const request = () => randomText();
 
 		expect(request).toThrowError(/(Currently no params supplied)/);
 
@@ -51,7 +52,7 @@ describe('text parameters', () => {
 
 		const characters = 15;
 		const words = 5;
-		const request = () => cornChips.text({ characters, words });
+		const request = () => randomText({ characters, words });
 
 		expect(request).toThrowError(/(Currently multiple params supplied)/);
 

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for corn-chips.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> corn-chips.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.39% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>59/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">74% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>37/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2</td><td class="line-coverage quiet"><span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">!function(r,t){"object"==typeof exports&amp;&amp;"object"==typeof module?module.exports=t():<span class="branch-1 cbranch-no" title="branch not covered" >"function"==typeof define&amp;&amp;define.amd?define([],t):"object"==typeof exports?exports["corn-chips"]=t():r["corn-chips"]=t()}</span>(this,function(){return function(r){function t(e){if(n[e])return n[e].exports;var o=n[e]={i:e,l:!1,exports:{}};return r[e].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=r,t.c=n,t.i=<span class="fstat-no" title="function not covered" >fu</span>nction(r){<span class="cstat-no" title="statement not covered" >return r}</span>,t.d=<span class="fstat-no" title="function not covered" >fu</span>nction(r,n,e){<span class="cstat-no" title="statement not covered" >t.o(r,n)||Object.defineProperty(r,n,{configurable:!1,enumerable:!0,get:e})}</span>,t.n=<span class="fstat-no" title="function not covered" >fu</span>nction(r){var n=<span class="cstat-no" title="statement not covered" >r&amp;&amp;r.__esModule?<span class="fstat-no" title="function not covered" >fu</span>nction(){<span class="cstat-no" title="statement not covered" >return r.default}</span>:<span class="fstat-no" title="function not covered" >fu</span>nction(){<span class="cstat-no" title="statement not covered" >return r}</span>;<span class="cstat-no" title="statement not covered" ></span>return t.d(n,"a",n),n}</span>,t.o=<span class="fstat-no" title="function not covered" >fu</span>nction(r,t){<span class="cstat-no" title="statement not covered" >return Object.prototype.hasOwnProperty.call(r,t)}</span>,t.p="",t(t.s=3)}([function(r,t,n){"use strict";function e(r,t){var n=(""+t).length-(""+r).length,e=new Array(n).fill("0").join("");return""+e+r}function o(){var r=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:{},t=r.min,n=void 0===t?0:t,o=r.max,i=r.pad,a=void 0!==i&amp;&amp;i,c=function(){return"(min = "+n+" | max = "+(o||"not supplied")+")"};if(!o&amp;&amp;isNaN(o))return u('please supply a "max" parameter '+c());if(n&gt;o)return u('your "min" is greater than your "max" parameter '+c());var f=Math.random()*(o-n+1)+n,p=Math.floor(f);return a?e(p,o):p}var u=n(1);r.exports=o},function(r,t,n){"use strict";function e(r){throw new Error(r)}r.exports=e},function(r,t,n){"use strict";function e(r){var t=r.substr(0,1).toUpperCase(),n=r.substr(1);return""+t+n}function o(r){return new Array(r).fill("").map(function(){var r=a({max:p.length-1});return p[r]}).join("")}function u(r){return new Array(r).fill("").map(function(){var r=a(f);return o(r)}).join(" ")}function i(){var r=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:{},t=r.characters,n=r.words,i=function(r){return'please supply either a "character" or "words" parameter (Currently '+r+" params supplied)"};if(!t&amp;&amp;!n)return c(i("no"));if(t&amp;&amp;n)return c(i("multiple"));var a=t?o(t):u(n)+".";return e(a)}var a=n(0),c=n(1),f={min:2,max:6},p="abcdefghijklmnopqrstuvwxyz".split("");r.exports=i},function(r,t,n){"use strict";var e=n(0),o=n(2);r.exports={randomNumber:e,randomText:o}}])});
+//# sourceMappingURL=corn-chips.js.map</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 23 2017 22:02:08 GMT+1300 (NZDT)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
