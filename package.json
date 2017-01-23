@@ -1,8 +1,9 @@
 {
   "name": "corn-chips",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "jest --coverage",
     "build:development": "npm run clean:dist && NODE_ENV=development webpack --watch",
