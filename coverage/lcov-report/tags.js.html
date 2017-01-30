@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for text.js</title>
+    <title>Code coverage report for tags.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">All files</a> text.js
+      <a href="index.html">All files</a> tags.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -27,7 +27,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>19/19</span>
+        <span class='fraction'>17/17</span>
       </div>
     </div>
   </div>
@@ -92,32 +92,29 @@
 47
 48
 49
-50
-51
-52
-53
-54</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+50</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,23 +122,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -152,52 +144,48 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const generateNumber = require('./number');
 const issueWarning = require('./warn');
 &nbsp;
-const wordLength = { min: 2, max: 6 };
-const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+function generateRefinedTags(tags, refinedIndex) {
 &nbsp;
-function capitaliseFirstLetter(text) {
-&nbsp;
-	const firstLetter = text.substr(0, 1).toUpperCase();
-	const restOfText = text.substr(1);
-&nbsp;
-	return `${firstLetter}${restOfText}`;
+	return refinedIndex.map(index =&gt; tags[index]);
 &nbsp;
 }
 &nbsp;
-function generateCharacters(characters) {
+function generateRefinedIndex(indexOptions, quantity) {
 &nbsp;
-	return new Array(characters).fill('').map(() =&gt; {
+	let remainingIndexes = indexOptions;
 &nbsp;
-		const index = generateNumber({ max: letters.length - 1 });
+	return new Array(quantity).fill(0).map(() =&gt; {
 &nbsp;
-		return letters[index];
+		const randomIndex = generateNumber({ max: indexOptions.length - 1 });
 &nbsp;
-	}).join('');
+		remainingIndexes = [
+			...remainingIndexes.slice(0, randomIndex),
+			...remainingIndexes.slice(randomIndex + 1),
+		];
 &nbsp;
-}
+		return randomIndex;
 &nbsp;
-function generateWords(words) {
-&nbsp;
-	return new Array(words).fill('').map(() =&gt; {
-&nbsp;
-		const characters = generateNumber(wordLength);
-&nbsp;
-		return generateCharacters(characters);
-&nbsp;
-	}).join(' ');
+	});
 &nbsp;
 }
 &nbsp;
-function generate({ characters, words } = {}) {
+function generateIndexOptions(tags) {
 &nbsp;
-	const warning = issue =&gt; `please supply either a "character" or "words" parameter (Currently ${issue} params supplied)`;
+	return new Array(tags.length).fill(0).map((v, i) =&gt; i);
 &nbsp;
-	if (!characters &amp;&amp; !words) return issueWarning(warning('no'));
-	if (characters &amp;&amp; words) return issueWarning(warning('multiple'));
+}
 &nbsp;
-	const text = characters ? generateCharacters(characters) : `${generateWords(words)}.`;
+function generate({ tags = [], quantity = tags.length } = {}) {
 &nbsp;
-	return capitaliseFirstLetter(text);
+	if (!Array.isArray(tags)) return issueWarning(`the "tags" parameter must be an array (currently a ${typeof tags})`);
+	if (!tags.length) return issueWarning('please supply a populated "tags" parameter e.g. ["foo", "bar", "baz"]');
+	if (quantity &gt; tags.length) return issueWarning(`the "quantity" parameter (${quantity}) is greater than the supplied "tags" total (${tags.length})`);
+&nbsp;
+	const indexOptions = generateIndexOptions(tags);
+	const refinedIndex = generateRefinedIndex(indexOptions, quantity);
+	const refinedTags = generateRefinedTags(tags, refinedIndex);
+&nbsp;
+	return refinedTags;
 &nbsp;
 }
 &nbsp;
