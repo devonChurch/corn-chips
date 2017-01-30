@@ -10,19 +10,22 @@ function generateRefinedTags(tags, refinedIndex) {
 function generateRefinedIndex(indexOptions, quantity) {
 
 	let remainingIndexes = indexOptions;
+	const refinedIndex = [];
 
-	return new Array(quantity).fill(0).map(() => {
+	while (remainingIndexes.length && refinedIndex.length < quantity) {
 
-		const randomIndex = generateNumber({ max: indexOptions.length - 1 });
+		const randomIndex = generateNumber({ max: remainingIndexes.length - 1 });
+
+		refinedIndex.push(remainingIndexes[randomIndex]);
 
 		remainingIndexes = [
 			...remainingIndexes.slice(0, randomIndex),
 			...remainingIndexes.slice(randomIndex + 1),
 		];
 
-		return randomIndex;
+	}
 
-	});
+	return refinedIndex;
 
 }
 
