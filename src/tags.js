@@ -1,4 +1,4 @@
-const generateNumber = require('./number');
+const randomNumber = require('./number');
 const issueWarning = require('./warn');
 
 function generateRefinedTags(tags, refinedIndex) {
@@ -9,23 +9,26 @@ function generateRefinedTags(tags, refinedIndex) {
 
 function generateRefinedIndex(indexOptions, quantity) {
 
-	let remainingIndexes = indexOptions;
-	const refinedIndex = [];
+	return new Array(quantity).fill(0)
 
-	while (remainingIndexes.length && refinedIndex.length < quantity) {
+		// Take the index of the current loop and randomly insert it into a new
+		// array to create the random set of indexes to pull out of the supplied
+		// indexOptions argument.
+		.reduce((reduction, v, i) => {
 
-		const randomIndex = generateNumber({ max: remainingIndexes.length - 1 });
+			const randomIndex = randomNumber({ max: i });
 
-		refinedIndex.push(remainingIndexes[randomIndex]);
+			return [
+				...reduction.slice(0, randomIndex),
+				i,
+				...reduction.slice(randomIndex),
+			];
 
-		remainingIndexes = [
-			...remainingIndexes.slice(0, randomIndex),
-			...remainingIndexes.slice(randomIndex + 1),
-		];
+		}, [])
 
-	}
-
-	return refinedIndex;
+		// Take the value from the randomised index array and use it to pull out the
+		// corresponding value at that index key.
+		.map(value => indexOptions[value]);
 
 }
 

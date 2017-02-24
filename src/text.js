@@ -1,4 +1,4 @@
-const generateNumber = require('./number');
+const randomNumber = require('./number');
 const issueWarning = require('./warn');
 
 const wordLength = { min: 2, max: 6 };
@@ -17,7 +17,7 @@ function generateCharacters(characters) {
 
 	return new Array(characters).fill('').map(() => {
 
-		const index = generateNumber({ max: letters.length - 1 });
+		const index = randomNumber({ max: letters.length - 1 });
 
 		return letters[index];
 
@@ -29,7 +29,7 @@ function generateWords(words) {
 
 	return new Array(words).fill('').map(() => {
 
-		const characters = generateNumber(wordLength);
+		const characters = randomNumber(wordLength);
 
 		return generateCharacters(characters);
 
@@ -50,4 +50,7 @@ function generate({ characters, words } = {}) {
 
 }
 
-module.exports = generate;
+module.exports = {
+	generate,
+	capitaliseFirstLetter,
+};

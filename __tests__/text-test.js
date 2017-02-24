@@ -2,8 +2,7 @@
 
 // babel-jest
 
-const {randomText} = require('../src/');
-// const {randomText} = require('../dist/corn-chips.js');
+const {  randomText } = require('../src/');
 
 describe('random characters', () => {
 
