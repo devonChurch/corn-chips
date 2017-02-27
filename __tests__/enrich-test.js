@@ -2,7 +2,7 @@
 
 // babel-jest
 
-const {enrichWords} = require('../src/');
+const { enrichWords } = require('../src/');
 
 describe('random enrich', () => {
 
@@ -12,7 +12,14 @@ describe('random enrich', () => {
 	it('enrich a string of words with a random set of supplied key words from an array', () => {
 
 		const result = enrichWords({ text, keyWords });
-		const enrichment = keyWords.filter(value => result.indexOf(value) >= 0);
+		const enrichment = keyWords.filter((value) => {
+
+			const index = result.indexOf(value);
+
+			return index >= 0;
+
+		});
+
 
 		expect(result).toEqual(expect.any(String));
 		expect(enrichment.length).toBeTruthy();

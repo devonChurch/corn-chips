@@ -7,7 +7,7 @@ function refineKeyWords(keyWords) {
 
 	const quantity = randomNumber({
 		min: 1,
-		max: keyWords.length - 1,
+		max: keyWords.length,
 	});
 
 	return randomTags({

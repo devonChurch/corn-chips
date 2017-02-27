@@ -1,6 +1,6 @@
 {
   "name": "corn-chips",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/corn-chips.js",
   "files": ["dist"],

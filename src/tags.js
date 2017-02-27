@@ -9,7 +9,7 @@ function generateRefinedTags(tags, refinedIndex) {
 
 function generateRefinedIndex(indexOptions, quantity) {
 
-	return new Array(quantity).fill(0)
+	const randomiseValues = new Array(indexOptions.length).fill(0)
 
 		// Take the index of the current loop and randomly insert it into a new
 		// array to create the random set of indexes to pull out of the supplied
@@ -30,6 +30,8 @@ function generateRefinedIndex(indexOptions, quantity) {
 		// corresponding value at that index key.
 		.map(value => indexOptions[value]);
 
+	return randomiseValues.slice(0, quantity);
+
 }
 
 function generateIndexOptions(tags) {
@@ -47,6 +49,8 @@ function generate({ tags = [], quantity = tags.length } = {}) {
 	const indexOptions = generateIndexOptions(tags);
 	const refinedIndex = generateRefinedIndex(indexOptions, quantity);
 	const refinedTags = generateRefinedTags(tags, refinedIndex);
+
+	console.log('refinedTags', refinedTags); // eslint-disable-line
 
 	return refinedTags;
 
