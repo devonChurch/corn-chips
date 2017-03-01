@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1488172350616" clover="3.2.0">
-  <project timestamp="1488172350617" name="All files">
-    <metrics statements="70" coveredstatements="70" conditionals="41" coveredconditionals="41" methods="21" coveredmethods="21" elements="132" coveredelements="132" complexity="0" loc="70" ncloc="70" packages="1" files="6" classes="6">
+<coverage generated="1488350226695" clover="3.2.0">
+  <project timestamp="1488350226695" name="All files">
+    <metrics statements="69" coveredstatements="69" conditionals="41" coveredconditionals="41" methods="21" coveredmethods="21" elements="131" coveredelements="131" complexity="0" loc="69" ncloc="69" packages="1" files="6" classes="6">
       <file name="enrich.js" path="/Users/devon-church/Documents/projects/corn-chips/src/enrich.js">
         <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="stmt"/>
@@ -34,25 +34,25 @@
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="14" count="78" type="stmt"/>
-        <line num="16" count="78" type="stmt"/>
-        <line num="17" count="77" type="stmt"/>
-        <line num="19" count="76" type="stmt"/>
-        <line num="20" count="76" type="stmt"/>
-        <line num="22" count="76" type="stmt"/>
+        <line num="14" count="79" type="stmt"/>
+        <line num="16" count="79" type="stmt"/>
+        <line num="17" count="78" type="stmt"/>
+        <line num="19" count="77" type="stmt"/>
+        <line num="20" count="77" type="stmt"/>
+        <line num="22" count="77" type="stmt"/>
         <line num="26" count="4" type="stmt"/>
       </file>
       <file name="tags.js" path="/Users/devon-church/Documents/projects/corn-chips/src/tags.js">
-        <metrics statements="18" coveredstatements="18" conditionals="9" coveredconditionals="9" methods="8" coveredmethods="8"/>
+        <metrics statements="17" coveredstatements="17" conditionals="9" coveredconditionals="9" methods="8" coveredmethods="8"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
-        <line num="6" count="26" type="stmt"/>
+        <line num="6" count="30" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
-        <line num="19" count="33" type="stmt"/>
-        <line num="21" count="33" type="stmt"/>
-        <line num="31" count="33" type="stmt"/>
+        <line num="19" count="35" type="stmt"/>
+        <line num="21" count="35" type="stmt"/>
+        <line num="31" count="35" type="stmt"/>
         <line num="33" count="4" type="stmt"/>
-        <line num="39" count="33" type="stmt"/>
+        <line num="39" count="35" type="stmt"/>
         <line num="45" count="7" type="stmt"/>
         <line num="46" count="6" type="stmt"/>
         <line num="47" count="5" type="stmt"/>
@@ -60,8 +60,7 @@
         <line num="50" count="4" type="stmt"/>
         <line num="51" count="4" type="stmt"/>
         <line num="53" count="4" type="stmt"/>
-        <line num="55" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
       </file>
       <file name="text.js" path="/Users/devon-church/Documents/projects/corn-chips/src/text.js">
         <metrics statements="19" coveredstatements="19" conditionals="11" coveredconditionals="11" methods="7" coveredmethods="7"/>
@@ -73,8 +72,8 @@
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
         <line num="18" count="6" type="stmt"/>
-        <line num="20" count="35" type="stmt"/>
-        <line num="22" count="35" type="stmt"/>
+        <line num="20" count="34" type="stmt"/>
+        <line num="22" count="34" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="32" count="5" type="stmt"/>
         <line num="34" count="5" type="stmt"/>

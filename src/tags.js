@@ -50,8 +50,6 @@ function generate({ tags = [], quantity = tags.length } = {}) {
 	const refinedIndex = generateRefinedIndex(indexOptions, quantity);
 	const refinedTags = generateRefinedTags(tags, refinedIndex);
 
-	console.log('refinedTags', refinedTags); // eslint-disable-line
-
 	return refinedTags;
 
 }
