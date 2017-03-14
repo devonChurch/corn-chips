@@ -16,7 +16,7 @@ module.exports = () => {
 
 			// publicPath:
 
-			library: 'corn-chips',
+			library: 'cornChips',
 
 			libraryTarget: 'umd', // 'commonjs',
 
