@@ -1,0 +1,10 @@
+language: node_js
+deploy:
+  provider: npm
+  email: notifydevon@gmail.com
+  api_key:
+    secure: GX83MjcEoHya9XGI04NBAT7etaO5kxCBuMNwvM6lY+WvdIf6dNSJg1iVunyqSUXfkgMwGzjTj72Y/jmo3Sm2Wd8MBct5uh1+sDGiI9yWJ9Dm/szGSEC9FFJMyIw8CFEYCFHhfq6RXAOlxz1l44dmcQ2yObQXSSLmJHivWUOJNygkun7LOM7CwAgtPOLJteGCyPcwnQbuZjm9LTam8nu6MurvVQkmWU5+/awaeFo0bstbS5aGu2vC7GqwiVSs2KIRHvFF6g7sgeRfIdPHt1xdqrVCYzNJomIBMkY5h4NuS23BsSEKWAPQrAcqGTZlJ4CsR+oip/8ObdgiutHD+DKbcz8JR5PrEICrLSnvOfz6NjDlMozFYz03Z8IewBNWX/oqA3NyCQR5L4OSSSxtfOI/pT7QM0pZpPZaPDblnHCKoUBpaAkyX8GtHWw7DGprjFkDZBy7DRWLQwhFxWZrkYAnYStweBs357Q6jy7yCLI00R6FHSIlhn24+st9B4cGENUKd5CQWRwRFQoqSzEhkmrqCO/vmnE0/QvrXB9sxXUUqOUpiypkBotY02YYi+fBuArAefqLcqOHIdMtmCPK3q/so8OaHFIWf1dmEuPOE++JYdwdbaI81kgX6sqpSWK1emDMIFwsUpJPm0iCa6+zGaNbuMN73d86xETPieMW5tdogOw=
+  on:
+    tags: true
+    repo: devonChurch/corn-chips
+    branch: master
