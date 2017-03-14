@@ -1,6 +1,6 @@
 {
   "name": "corn-chips",
-  "version": "0.1.1",
+  "version": "0.2.3",
   "description": "",
   "main": "dist/corn-chips.js",
   "files": [
@@ -11,7 +11,7 @@
     "build:development": "npm run clean:dist && NODE_ENV=development webpack --watch",
     "build:production": "npm run clean:dist && NODE_ENV=production webpack -p",
     "clean:dist": "rm -rf ./dist",
-	"commit": "git-cz"
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
