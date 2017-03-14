@@ -7,6 +7,8 @@ deploy:
   on:
     tags: true
     repo: devonChurch/corn-chips
+    branches:
+    only:
+      - master
 script:
-    - npm version from-git
     - npm run build:production
